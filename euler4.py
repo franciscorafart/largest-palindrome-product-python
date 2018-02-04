@@ -4,9 +4,10 @@ def isPalindrome(str):
     res = False
     half = len(str)/2
     for x in range(0, half):
+        #compare the character from the index in the left from the one in the right of the string
         if str[x] == str[-x-1]:
             res = True
-        else:
+        else: #if false, then its not a palindrome. Break the loop
             res = False
             break
     return res
@@ -17,17 +18,8 @@ for i in range(100,1000):
         #product of two numbers
         prod = i * j
         prodStr = str(prod)
+        # if it is a palindrome and is largest than the previous product stored, store as the larges
         if (isPalindrome(prodStr) and prod>largest):
             largest = prod
 
 print(largest)
-
-# def totalPalindrome(min, max):
-#     sum = 0
-#     for x in range(min,max+1):
-#         xStr = str(x)
-#         # print('{} is palindrom: {}'.format(x, isPalindrome(xStr)))
-#         if (isPalindrome(xStr)):
-#             sum += x
-#
-#     return sum
